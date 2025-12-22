@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Resume<span>Craft</span></div>
+  <a href="index.html" class="btn-outline">Home</a>
+</header>
+
+<div class="builder-container">
+
+  <!-- LEFT PANEL -->
+  <div class="editor">
+    <h2>Resume Details</h2>
+
+    <input id="name" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="phone" placeholder="Phone">
+    <textarea id="summary" placeholder="Profile Summary"></textarea>
+    <textarea id="skills" placeholder="Skills (HTML, CSS, JS)"></textarea>
+    <textarea id="education" placeholder="Education"></textarea>
+    <textarea id="experience" placeholder="Experience"></textarea>
+
+    <label>Template</label>
+    <select id="theme" onchange="changeTheme()">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+
+    <button onclick="generateResume()">Update Resume</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="resume-preview light" id="resume">
+    <h1 id="r-name">Your Name</h1>
+    <p id="r-contact">Email | Phone</p>
+
+    <h3>Profile</h3>
+    <p id="r-summary"></p>
+
+    <h3>Skills</h3>
+    <p id="r-skills"></p>
+
+    <h3>Education</h3>
+    <p id="r-education"></p>
+
+    <h3>Experience</h3>
+    <p id="r-experience"></p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
